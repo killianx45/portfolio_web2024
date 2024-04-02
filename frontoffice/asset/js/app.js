@@ -43,6 +43,19 @@ li.forEach(function (item) {
   });
 });
 
+let iconePDF = document.querySelector(".img-cv");
+let linkPDF = document.querySelector(".cv-link");
+
+if (window.innerWidth > 1000) {
+  linkPDF.addEventListener("mouseover", function () {
+    iconePDF.src = "frontoffice/asset/img/pdf.webp";
+  });
+
+  linkPDF.addEventListener("mouseout", function () {
+    iconePDF.src = "frontoffice/asset/img/pdf1.webp";
+  });
+}
+
 // animations avec GSAP et ScrollTrigger
 
 gsap.registerPlugin(ScrollTrigger);
@@ -82,7 +95,7 @@ gsap.from(".slides-container", {
   stagger: 0.5,
 });
 
-if (window.innerWidth > 750) {
+if (window.innerWidth > 1000) {
   const project = document.querySelector(".slides");
 
   function getScrollAmount() {

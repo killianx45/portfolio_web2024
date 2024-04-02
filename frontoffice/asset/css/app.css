@@ -83,20 +83,13 @@ h2 {
     margin-bottom: 16px;
     margin-left: 32px;
     color: var(--text-color-secondary);
-    font-size: 0px;
+    font-size: 20px;
   }
   .header-content h1,
   h2 {
     margin-left: 32px;
     color: var(--text-color-primary);
-    font-size: 0px;
-  }
-  .header-content .img-pp {
-    margin-right: 24px;
-  }
-  .header-content .img-pp img {
-    width: 200px;
-    height: 200px;
+    font-size: 64px;
   }
   .header-content .social-media a img {
     width: 24px;
@@ -105,19 +98,6 @@ h2 {
 }
 
 @media screen and (min-width: 1024px) {
-  .header-content .img-pp img {
-    width: 250px;
-    height: 250px;
-    margin-left: 40px;
-    -webkit-filter: blur(3px);
-    filter: blur(3px);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-  }
-  .header-content .img-pp img:hover {
-    -webkit-filter: blur(0);
-    filter: blur(0);
-  }
   .header-content .content-text p {
     font-size: 24px;
     margin-left: 40px;
@@ -127,7 +107,6 @@ h2 {
   h2 {
     font-size: 96px;
   }
-
   .social-media a:hover {
     background: var(--text-color-secondary);
     transition: 0.5s ease-in-out;
@@ -237,7 +216,6 @@ h2 {
 #propos {
   display: flex;
   flex-direction: column;
-  margin-top: 56px;
 }
 
 #propos h3 {
@@ -283,7 +261,8 @@ h2 {
   text-decoration: none;
   border: var(--bg-secondary) 2px solid;
   margin-top: 16px;
-  padding: 8px 32px;
+  margin-bottom: 16px;
+  padding: 2px 32px;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -346,6 +325,11 @@ h2 {
   .text-propos a {
     font-size: 24px;
   }
+  .text-propos a:hover {
+    background: var(--text-color-secondary);
+    transition: 0.5s ease-in-out;
+    color: var(--bg-primary);
+  }
   .img-pp img {
     width: 250px;
     height: 250px;
@@ -362,6 +346,13 @@ h2 {
 }
 
 /** MES COMPETENCES **/
+
+#competences {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 #competences h3 {
   font-family: "Montserrat", sans-serif;
@@ -381,6 +372,7 @@ h2 {
   margin-top: 16px;
   margin-bottom: 8px;
   text-align: center;
+  width: 90%;
 }
 
 .competences-container {
@@ -447,8 +439,17 @@ h2 {
 }
 
 @media screen and (min-width: 744px) {
+  #competences {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   #competences h3 {
     font-size: 32px;
+  }
+  #competences p {
+    width: 70%;
   }
   .competences-container {
     flex-flow: row wrap;
@@ -546,12 +547,6 @@ h2 {
 @media screen and (min-width: 744px) {
   #projets h3 {
     font-size: 32px;
-  }
-  .slides {
-    width: 100%;
-  }
-  .slide-container {
-    width: 70%;
   }
   .slide-img img {
     width: 24px;
