@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  cursor: none;
 }
 :root {
   --bg-primary: #eeeeee;
@@ -16,6 +17,32 @@
   --text-color-primary: #2a2a2a;
   --low-contrast: #2a2a2a;
 }
+
+/** CURSOR **/
+
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--text-color-primary);
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--text-color-secondary);
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+}
+
 body {
   background: var(--bg-primary);
   overflow-x: hidden;

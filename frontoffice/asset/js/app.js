@@ -120,3 +120,27 @@ if (window.innerWidth > 1000) {
     invalidateOnRefresh: true,
   });
 }
+
+/** CURSOR */
+
+let cursorDot = document.querySelector(".cursor-dot");
+let cursorOutline = document.querySelector(".cursor-outline");
+
+window.addEventListener("mousemove", (e) => {
+  const posX = e.clientX;
+  const posY = e.clientY;
+
+  cursorDot.style.top = `${posY}px`;
+  cursorDot.style.left = `${posX}px`;
+
+  //cursorOutline.style.top = `${posY}px`;
+  //cursorOutline.style.left = `${posX}px`;
+
+  cursorOutline.animate(
+    {
+      top: `${posY}px`,
+      left: `${posX}px`,
+    },
+    { duration: 500, fill: "forwards" }
+  );
+});
