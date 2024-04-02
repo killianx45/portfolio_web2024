@@ -32,13 +32,78 @@ menuIcon.addEventListener("click", function () {
   if (menuBox.classList.contains("open-menu")) {
     menuIcon.src = "frontoffice/asset/img/close1.webp";
   } else {
-    menuIcon.src = "frontoffice/asset/img/menu1.webp";
+    menuIcon.src = "frontoffice/asset/img/menu.webp";
   }
 });
 
 li.forEach(function (item) {
   item.addEventListener("click", function () {
     menuBox.classList.remove("open-menu");
-    menuIcon.src = "frontoffice/asset/img/menu1.webp";
+    menuIcon.src = "frontoffice/asset/img/menu.webp";
   });
 });
+
+// animations avec GSAP et ScrollTrigger
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".social-media a", {
+  scrollTrigger: {
+    trigger: ".social-media",
+    toggleActions: "restart none none reverse",
+    start: "top 50%",
+    end: "bottom 30%",
+  },
+  y: 100,
+  opacity: 0,
+  scale: 0,
+  ease: "elastic.out(0.4,0.15)",
+  duration: 1,
+  stagger: 0.2,
+});
+
+gsap.from("#section-projets", {
+  scrollTrigger: {
+    trigger: "#section-projets",
+    toggleActions: "restart none none reverse",
+    start: "top 80%",
+  },
+  x: "-100vw",
+  duration: 0.5,
+});
+
+gsap.from(".slides-container", {
+  scrollTrigger: {
+    trigger: ".slides-container",
+    start: "top center",
+  },
+  y: "100vh",
+  duration: 0.5,
+  stagger: 0.5,
+});
+
+if (window.innerWidth > 750) {
+  const project = document.querySelector(".slides");
+
+  function getScrollAmount() {
+    let projectWidth = project.scrollWidth;
+    return -(projectWidth - window.innerWidth / 1.6);
+  }
+
+  const tween = gsap.to(project, {
+    x: getScrollAmount,
+    y: 0,
+    duration: 3,
+    ease: "none",
+  });
+
+  ScrollTrigger.create({
+    trigger: "#projets",
+    start: "top 0%",
+    end: () => `+=${getScrollAmount() * -1}`,
+    pin: true,
+    animation: tween,
+    scrub: 3,
+    invalidateOnRefresh: true,
+  });
+}

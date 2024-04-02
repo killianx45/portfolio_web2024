@@ -33,34 +33,28 @@
   <body>
     <header id="header">
       <img
-        src="frontoffice/asset/img/menu1.webp"
+        src="frontoffice/asset/img/menu.webp"
         alt="icone du menu"
         id="menuIcon"
       />
       <nav class="menu-box" id="menuBox" aria-label="Menu principal">
         <ul>
           <li><a href="#header" aria-label="Section d'accueil">Accueil</a></li>
+          <li><a href="#propos" aria-label="Section à propos">A propos</a></li>
+          <li><a href="#projets" aria-label="Section projets">Projets</a></li>
           <li>
             <a href="#competences" aria-label="Section compétences"
               >Compétences</a
             >
           </li>
-          <li><a href="#projets" aria-label="Section projets">Projets</a></li>
           <li><a href="#contact" aria-label="Section contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-content">
-        <div class="img-pp">
-          <img
-            src="frontoffice/asset/img/ppkillian.webp"
-            alt="Photo Profil Killian"
-          />
-        </div>
         <div class="content-text">
-          <div class="background-line"></div>
-          <p><span>Salut! moi c'est -</span></p>
-          <h1><span>Killian</span></h1>
-          <h2><span>Jeuffroy</span></h2>
+          <p>Salut! moi c'est -</p>
+          <h1>Killian</h1>
+          <h2>Jeuffroy</h2>
           <p>
             <span
               ><em>Développeur Web.</em> Passionné par le développement back
@@ -86,12 +80,7 @@
                 alt="Logo linkedin"
               />LinkedIn</a
             >
-            <a
-              href="frontoffice/asset/img/cv_alternance_killian_jeuffroy.webp"
-              target="_blank"
-              aria-label="CV"
-              ><img src="frontoffice/asset/img/pdf.webp" alt="icone pdf" />CV</a
-            >
+
             <a
               href="mailto:killianjeuffroy@gmail.com"
               target="_blank"
@@ -106,8 +95,82 @@
       </div>
     </header>
     <main>
+      <section id="propos" aria-labelledby="section-propos">
+        <h3 id="section-propos">A propos</h3>
+        <div class="content-propos">
+          <div class="text-propos">
+            <p>
+              Je m'appelle <em>Killian JEUFFROY</em>, j'ai 19 ans! Je suis
+              passionné par les nouvelles
+              <em>technologies et innovations</em> et j'aimerais me spécialiser
+              dans le développement web et plus particulièrement dans le
+              <em>développement back end</em>. J'ai réalisé plusieurs projets
+              durant mes années d'études et mon temps personnel.
+            </p>
+            <a
+              href="frontoffice/asset/img/cv_alternance_killian_jeuffroy.webp"
+              target="_blank"
+              aria-label="CV"
+              ><img
+                src="frontoffice/asset/img/pdf1.webp"
+                alt="icone pdf"
+              />CV</a
+            >
+          </div>
+          <div class="img-pp">
+            <img
+              src="frontoffice/asset/img/ppkillian.webp"
+              alt="Photo Profil Killian"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="projets" aria-labelledby="section-projets">
+        <h3 id="section-projets">Mes projets</h3>
+        <div class="slides">
+          <div class="slide-container">
+            <a
+              href="https://ascoux-judoclub.fr"
+              target="_blank"
+              aria-label="Site projet"
+              ><img
+                class="img-projet"
+                src="frontoffice/asset/img/judo.webp"
+                alt="Site projet"
+            /></a>
+          </div>
+          <div class="slide-container">
+            <a
+              href="https://github.com/killianx45/projetfilerouge_b2d_cinetheque"
+              target="_blank"
+              aria-label="Site projet"
+              ><img
+                class="img-projet"
+                src="frontoffice/asset/img/cinetheque.webp"
+                alt="Site projet"
+            /></a>
+          </div>
+          <div class="slide-container">
+            <a
+              href="https://killianx45.github.io/snake"
+              target="_blank"
+              aria-label="Site projet"
+              ><img
+                class="img-projet"
+                src="frontoffice/asset/img/snake.webp"
+                alt="Site projet"
+            /></a>
+          </div>
+        </div>
+      </section>
       <section id="competences" aria-labelledby="section-competences">
         <h3 id="section-competences">Mes compétences</h3>
+        <p>
+          Durant ma 1ère année et 2ème année ainsi que mon temps personnel j'ai
+          pu acquérir différentes <em>compétences</em> dans le développement web
+          ! Je suis actuellement entrain d'apprendre le
+          <em>framework Symfony</em>.
+        </p>
         <div class="competences-container">
           <div class="competences">
             <h4>Front End</h4>
@@ -185,77 +248,6 @@
           </div>
         </div>
       </section>
-      <section id="projets" aria-labelledby="section-projets">
-        <h3 id="section-projets">Mes projets</h3>
-        <div class="slides">
-          <div class="slide-container">
-            <div class="slide-img">
-              <i class="fa-solid fa-globe"></i>
-              <a
-                href="https://ascoux-judoclub.fr"
-                target="_blank"
-                aria-label="Site projet"
-                ><img
-                  src="frontoffice/asset/img/partager.webp"
-                  alt="visiter le site"
-              /></a>
-            </div>
-            <div class="slide-content">
-              <h4>Site WordPress</h4>
-              <p>
-                Réalisation d'un projet en groupe réalisant un site avec le CMS
-                WordPress pour un client à trouver soi-même. Le but était de
-                pouvoir réaliser le site du client en fonction de ses besoins
-                tout en respectant les délais fixés par l'école.
-              </p>
-            </div>
-          </div>
-          <div class="slide-container">
-            <div class="slide-img">
-              <i class="fa-solid fa-film"></i>
-              <a
-                href="https://github.com/killianx45/projetfilerouge_b2d_cinetheque"
-                target="_blank"
-                aria-label="Site projet"
-                ><img
-                  src="frontoffice/asset/img/partager.webp"
-                  alt="visiter le site"
-              /></a>
-            </div>
-            <div class="slide-content">
-              <h4>Projet CinéThèque</h4>
-              <p>
-                Le but de ce projet était de réaliser grâce aux langages React,
-                Node.js, tailwindcss ainsi que MongoDB, un site permettant de
-                ressencé une liste de film envoyé sous forme de fichier excel
-                afin de pouvoir consulter la liste, ajouter les films dans
-                différentes rubriques mais également de consulter les séances
-                près chez soi en fonction du film choisi.
-              </p>
-            </div>
-          </div>
-          <div class="slide-container">
-            <div class="slide-img">
-              <i class="fa-solid fa-gamepad"></i>
-              <a
-                href="https://killianx45.github.io/snake"
-                target="_blank"
-                aria-label="Site projet"
-                ><img
-                  src="frontoffice/asset/img/partager.webp"
-                  alt="visiter le site"
-              /></a>
-            </div>
-            <div class="slide-content">
-              <h4>Jeu Javascript Snake</h4>
-              <p>
-                Réalisation d'un jeu uniquement en javascript reprenant le jeu
-                très connu snake !
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       <section id="contact" aria-labelledby="section-contact">
         <h3 id="section-contact">Contact</h3>
         <p>
@@ -302,6 +294,8 @@
     <footer>
       <p>2024 - Portfolio killian jeuffroy</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="frontoffice/asset/js/app.js"></script>
   </body>
 </html>
