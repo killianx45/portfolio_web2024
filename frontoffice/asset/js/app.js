@@ -31,8 +31,12 @@ menuIcon.addEventListener("click", function () {
 
   if (menuBox.classList.contains("open-menu")) {
     menuIcon.src = "frontoffice/asset/img/close1.webp";
+    cursorDot.style.background = "white";
+    cursorOutline.style.border = "2px solid white";
   } else {
     menuIcon.src = "frontoffice/asset/img/menu.webp";
+    cursorDot.style.background = "#2a2a2a";
+    cursorOutline.style.border = "2px solid #282a39";
   }
 });
 
@@ -40,6 +44,8 @@ li.forEach(function (item) {
   item.addEventListener("click", function () {
     menuBox.classList.remove("open-menu");
     menuIcon.src = "frontoffice/asset/img/menu.webp";
+    cursorDot.style.background = "#2a2a2a";
+    cursorOutline.style.border = "2px solid #282a39";
   });
 });
 
@@ -121,26 +127,58 @@ if (window.innerWidth > 1000) {
   });
 }
 
+gsap.to(".text", { duration: 0.4, y: "0%", stagger: 0.2 });
+
 /** CURSOR */
 
 let cursorDot = document.querySelector(".cursor-dot");
 let cursorOutline = document.querySelector(".cursor-outline");
 
-window.addEventListener("mousemove", (e) => {
-  const posX = e.clientX;
-  const posY = e.clientY;
+if (window.innerWidth > 1000) {
+  window.addEventListener("mousemove", (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
 
-  cursorDot.style.top = `${posY}px`;
-  cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+    cursorDot.style.left = `${posX}px`;
 
-  //cursorOutline.style.top = `${posY}px`;
-  //cursorOutline.style.left = `${posX}px`;
+    //cursorOutline.style.top = `${posY}px`;
+    //cursorOutline.style.left = `${posX}px`;
 
-  cursorOutline.animate(
-    {
-      top: `${posY}px`,
-      left: `${posX}px`,
-    },
-    { duration: 500, fill: "forwards" }
-  );
+    cursorOutline.animate(
+      {
+        top: `${posY}px`,
+        left: `${posX}px`,
+      },
+      { duration: 500, fill: "forwards" }
+    );
+  });
+}
+
+let links = document.querySelectorAll(".link-social-media");
+
+links.forEach((link) => {
+  link.addEventListener("mouseover", () => {
+    cursorDot.style.background = "white";
+    cursorOutline.style.border = "2px solid white";
+  });
+
+  link.addEventListener("mouseleave", () => {
+    cursorDot.style.background = "#2a2a2a";
+    cursorOutline.style.border = "2px solid #282a39";
+  });
+});
+
+let competences = document.querySelectorAll(".competences");
+
+competences.forEach((slide) => {
+  slide.addEventListener("mouseover", () => {
+    cursorDot.style.background = "white";
+    cursorOutline.style.border = "2px solid white";
+  });
+
+  slide.addEventListener("mouseleave", () => {
+    cursorDot.style.background = "#2a2a2a";
+    cursorOutline.style.border = "2px solid #282a39";
+  });
 });
