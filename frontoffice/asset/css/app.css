@@ -578,12 +578,8 @@ h2 span {
 }
 
 .slide-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  width: 90%;
+  width: 60%;
+  height: 100%;
 }
 
 .slide-container img {
@@ -596,14 +592,6 @@ h2 span {
 @media screen and (min-width: 744px) {
   #projets h3 {
     font-size: 32px;
-  }
-  .slide-img img {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-  }
-  .slide-img i {
-    font-size: 24px;
   }
   .slide-content p {
     font-size: 16px;
@@ -620,7 +608,6 @@ h2 span {
     justify-content: start;
     flex-direction: row;
     margin-left: 56px;
-    width: 100%;
   }
   .slides .img-projet {
     width: 100%;
