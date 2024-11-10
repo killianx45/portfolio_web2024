@@ -31,28 +31,83 @@
     />
   </head>
   <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
     <header id="header">
-      <img
-        src="frontoffice/asset/img/menu.webp"
-        alt="icone du menu"
-        id="menuIcon"
-      />
-      <nav class="menu-box" id="menuBox" aria-label="Menu principal">
-        <ul>
-          <li><a href="#header" aria-label="Section d'accueil">Accueil</a></li>
-          <li><a href="#propos" aria-label="Section à propos">A propos</a></li>
-          <li><a href="#projets" aria-label="Section projets">Projets</a></li>
-          <li>
-            <a href="#competences" aria-label="Section compétences"
-              >Compétences</a
-            >
-          </li>
-          <li><a href="#contact" aria-label="Section contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-content">
+      <div class="mobile-menu">
+        <img
+          src="frontoffice/asset/img/menu.webp"
+          alt="icone du menu"
+          id="menuIcon"
+        />
+        <nav class="menu-box" id="menuBox" aria-label="Menu principal">
+          <ul>
+            <li><a href="#header" aria-label="Section d'accueil">Accueil</a></li>
+            <li><a href="#propos" aria-label="Section à propos">A propos</a></li>
+            <li><a href="#projets" aria-label="Section projets">Projets</a></li>
+            <li>
+              <a href="#competences" aria-label="Section compétences"
+                >Compétences</a
+              >
+            </li>
+            <li><a href="#contact" aria-label="Section contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="desktop-menu">
+        <nav class="menu-desktop" aria-label="Menu principal">
+          <ul>
+            <li><a href="#header" aria-label="Section d'accueil">Accueil</a></li>
+            <li><a href="#propos" aria-label="Section à propos">A propos</a></li>
+            <li><a href="#projets" aria-label="Section projets">Projets</a></li>
+            <li>
+              <a href="#competences" aria-label="Section compétences"
+                >Compétences</a
+              >
+            </li>
+            <li><a href="#contact-point" aria-label="Section contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="Mbg">
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+        <div class="Mbg_col">
+          <div class="Mbg_col_el Mbg_col_el-1"></div>
+          <div class="Mbg_col_el Mbg_col_el-2"></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="header-content">
         <div class="content-text">
           <p><span class="text">Salut! moi c'est -</span></p>
           <h1><span class="text">Killian</span></h1>
@@ -99,20 +154,18 @@
             >
           </div>
         </div>
-      </div>
-    </header>
-    <main>
+      </section>
       <section id="propos" aria-labelledby="section-propos">
-        <h3 id="section-propos">A propos</h3>
+        <div class="largeTitle-content">
+          <h2 id="section-propos" class="largeTitle-txt">
+            <span class="line-0">A propos</span>
+          </h2>
+        </div>
+        
+        
         <div class="content-propos">
           <div class="text-propos">
-            <p>
-              Je m'appelle <em>Killian JEUFFROY</em>, j'ai 20 ans! Je suis
-              passionné par les nouvelles
-              <em>technologies et innovations</em> et j'aimerais me spécialiser
-              dans le développement web et plus particulièrement dans le
-              <em>développement back end.</em> J'ai réalisé plusieurs projets
-              durant mes années d'études et mon temps personnel.
+            <p>Bonjour ! Je m’appelle <em>Killian JEUFFROY</em>, j’ai 20 ans et je suis passionné par les nouvelles technologies et l'innovation. Actuellement en deuxième année de développement web à <em>l’IUT de Blois</em>, j'aimerai me spécialiser dans le <em>développement backend</em>. J'ai déjà eu l'occasion de mener divers projets durant mes études et mon temps libre, ce qui m’a permis de bien développer mes compétences. Je suis en <em>recherche d’un stage</em> de 11 semaines à partir du 7 avril 2025, pour continuer à apprendre et contribuer activement à une équipe.
             </p>
             <a
               class="cv-link link-social-media"
@@ -128,7 +181,7 @@
           </div>
           <div class="img-pp">
             <img
-              src="frontoffice/asset/img/ppkillian.webp"
+              src="frontoffice/asset/img/pp_killian_semi.webp"
               alt="Photo Profil Killian"
             />
           </div>
@@ -138,70 +191,76 @@
         <h3 id="section-projets">Mes projets</h3>
         <div class="slides">
           <div class="slide-container">
-            <a
-              href="https://ascoux-judoclub.fr"
-              target="_blank"
-              aria-label="Site projet"
-              rel="noopener"
-              ><img
+            <div class="image">
+              <img
                 class="img-projet"
                 src="frontoffice/asset/img/judo.webp"
-                alt="Site projet"
-            /></a>
+                alt="Site projet"/>
+            </div>
           </div>
           <div class="slide-container">
-            <a
-              href="https://github.com/killianx45/projetfilerouge_b2d_cinetheque"
-              target="_blank"
-              aria-label="Site projet"
-              rel="noopener"
-              ><img
+            <div class="image">
+              <img
                 class="img-projet"
-                src="frontoffice/asset/img/cinetheque.webp"
-                alt="Site projet"
-            /></a>
+                src="frontoffice/asset/img/cinetheque_react.webp"
+                alt="Site projet"/>
+            </div>
           </div>
           <div class="slide-container">
-            <a
-              href="https://killianx45.github.io/snake"
-              target="_blank"
-              aria-label="Site projet"
-              rel="noopener"
-              ><img
+            <div class="image">
+              <img
                 class="img-projet"
                 src="frontoffice/asset/img/snake.webp"
-                alt="Site projet"
-            /></a>
+                alt="Site projet"/>
+            </div>
           </div>
           <div class="slide-container">
-            <a
-              href="https://github.com/killianx45/projet_symfony"
-              target="_blank"
-              aria-label="Site projet"
-              rel="noopener"
-              ><img
+            <div class="image">
+              <img
                 class="img-projet"
-                src="frontoffice/asset/img/blog.webp"
-                alt="Site projet"
-            /></a>
+                src="frontoffice/asset/img/blog_symfony.webp"
+                alt="Site projet"/>
+            </div>
           </div>
           <div class="slide-container">
-            <a
-              href="https://github.com/killianx45/stopwatch"
-              target="_blank"
-              aria-label="Site projet"
-              rel="noopener"
-              ><img
+            <div class="image">
+              <img
                 class="img-projet"
-                src="frontoffice/asset/img/flutterapp.webp"
-                alt="Site projet"
-            /></a>
+                src="frontoffice/asset/img/stopwatch.webp"
+                alt="Site projet"/>
+            </div>
           </div>
+        </div>
+
+        <div class="popup">
+          <span class="popup-close">&times;</span>
+          <div class="content-popup">
+            <video src="frontoffice/asset/videos/blog_symfony_video.webm" autoplay></video>
+            <!-- <img
+              class="img-popup"
+              src="frontoffice/asset/img/judo.webp"
+              alt="Site projet"/> -->
+              
+            <!-- <iframe src="frontoffice/asset/videos/cinetheque_video.mov" frameborder="0" title="video"></iframe> -->
+            <div class="text-popup">
+              <h4>Site de Judo</h4>
+              <p>
+                Site de Judo réalisé en HTML, CSS et JavaScript. Ce site a été
+                réalisé dans le cadre de ma formation en développement web.
+              </p>
+              <a
+                class="link-projet"
+                href="https://killian-jeuffroy.fr/projets/judo/index.html"
+                target="_blank"
+                aria-label="Site de Judo"
+                rel="noopener"
+                >Voir le projet</a>
+            </div>
         </div>
       </section>
       <section id="competences" aria-labelledby="section-competences">
-        <h3 id="section-competences">Mes compétences</h3>
-        <p>
+        <h3 id="section-competences">compétences</h3>
+        <p id="competences-point">
           Durant ma 1ère année et 2ème année ainsi que mon temps personnel j'ai
           pu acquérir différentes <em>compétences</em> dans le développement web
           ! Je suis actuellement entrain d'apprendre le
@@ -212,12 +271,16 @@
             <h4>Front End</h4>
             <div class="competences-front">
               <div class="competences-front-item">
-                <img src="frontoffice/asset/img/html1.webp" alt="Logo HTML" />
-                <h5>HTML</h5>
+                  <img src="frontoffice/asset/img/html1.webp" alt="Logo HTML" />
+                  <h5>HTML</h5>
               </div>
               <div class="competences-front-item">
                 <img src="frontoffice/asset/img/css.webp" alt="Logo CSS" />
                 <h5>CSS</h5>
+              </div>
+              <div class="competences-front-item">
+                <img src="frontoffice/asset/img/sass.webp" alt="Logo SASS" />
+                <h5>SASS</h5>
               </div>
               <div class="competences-front-item">
                 <img
@@ -232,6 +295,20 @@
                   alt="Logo REACT JS"
                 />
                 <h5>React JS</h5>
+              </div>
+              <div class="competences-front-item">
+                <img
+                  src="frontoffice/asset/img/nextjs.webp"
+                  alt="Logo NEXT JS"
+                />
+                <h5>Next JS</h5>
+              </div>
+              <div class="competences-front-item">
+                <img
+                  src="frontoffice/asset/img/vuejs.webp"
+                  alt="Logo VUE JS"
+                />
+                <h5>Vue JS</h5>
               </div>
             </div>
           </div>
@@ -267,6 +344,13 @@
                 />
                 <h5>Symfony</h5>
               </div>
+              <div class="competences-front-item">
+                <img
+                  src="frontoffice/asset/img/laravel.webp"
+                  alt="Logo LARAVEL"
+                />
+                <h5>Laravel</h5>
+              </div>
             </div>
           </div>
           <div class="competences">
@@ -294,13 +378,21 @@
                 <img src="frontoffice/asset/img/seo1.webp" alt="Logo SEO" />
                 <h5>SEO</h5>
               </div>
+              <div class="competences-front-item">
+                <img src="frontoffice/asset/img/tailwindcss.webp" alt="Logo SEO" />
+                <h5>Tailwindcss</h5>
+              </div>
+              <div class="competences-front-item">
+                <img src="frontoffice/asset/img/typescript.webp" alt="Logo TYPESCRIPT" />
+                <h5>TypeScript</h5>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section id="contact" aria-labelledby="section-contact">
         <h3 id="section-contact">Contact</h3>
-        <p>
+        <p id="contact-point">
           Vous avez un projet en tête ou vous souhaitez simplement discuter?
           N'hésitez pas à me <em>contacter!</em>
         </p>
@@ -349,6 +441,28 @@
     </main>
     <footer>
       <p>2024 - Portfolio killian jeuffroy</p>
+      <div class="mention-popup">
+        <p>Mentions Légales</p>
+        <div class="mention-content">
+          <h3>Mentions Légales</h3>
+          <h4>1. Éditeur du site</h4>
+          <p>Nom : Killian Jeuffroy</p>
+          <p>Email : killianjeuffroy@gmail.com</p>
+
+          <h4>2. Hébergement du site</h4>
+          <p>Nom de l'hébergeur : GitHub</p>
+
+          <h4>3. Responsabilité et gestion des contenus</h4>
+          <p>Les informations présentes sur ce site sont fournies à titre informatif et peuvent être modifiées sans préavis. L’éditeur ne peut être tenu responsable de l’exactitude ou de l’exhaustivité des informations affichées. L’utilisateur du site reconnaît utiliser ces informations sous sa seule responsabilité.</p>
+
+          <h4>4. Données personnelles et cookies</h4>
+          <p>Ce site ne collecte pas de données personnelles sans votre consentement. Si vous choisissez de remplir un formulaire de contact, vos informations seront utilisées uniquement pour répondre à votre demande et ne seront pas conservées à des fins commerciales.</p>
+          <p>Cookies : Ce site utilise des cookies pour améliorer l’expérience utilisateur. Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur.</p>
+
+          <h4>5. Propriété intellectuelle</h4>
+          <p>Les contenus présents sur ce site (textes, images, vidéos, etc.) sont protégés par les lois sur la propriété intellectuelle. Toute reproduction, distribution, modification, ou exploitation de ces contenus sans l’autorisation de l’éditeur est interdite.</p>
+        </div>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

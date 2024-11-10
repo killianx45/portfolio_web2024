@@ -1,21 +1,12 @@
 "use strict";
 
-// sélectionnez tous les liens avec un href commençant par #
 const lien = document.querySelectorAll('a[href^="#"]');
 
-// ajouter un écouteur d'événement à chaque lien
 lien.forEach((link) => {
   link.addEventListener("click", (e) => {
-    // empêcher le comportement par défaut du lien
     e.preventDefault();
-
-    // obtenir l'identifiant de la section cible du lien
     const id = link.getAttribute("href").substring(1);
-
-    // trouver la section cible
     const target = document.getElementById(id);
-
-    // faire défiler en douceur jusqu'à la section cible
     target.scrollIntoView({
       behavior: "smooth",
     });
@@ -28,24 +19,20 @@ let li = document.querySelectorAll("li");
 
 menuIcon.addEventListener("click", function () {
   menuBox.classList.toggle("open-menu");
-
   if (menuBox.classList.contains("open-menu")) {
+    document.body.style.overflow = "hidden";
     menuIcon.src = "frontoffice/asset/img/close1.webp";
-    cursorDot.style.background = "white";
-    cursorOutline.style.border = "2px solid white";
   } else {
+    document.body.style.overflow = "auto";
     menuIcon.src = "frontoffice/asset/img/menu.webp";
-    cursorDot.style.background = "#2a2a2a";
-    cursorOutline.style.border = "2px solid #282a39";
   }
 });
 
 li.forEach(function (item) {
   item.addEventListener("click", function () {
     menuBox.classList.remove("open-menu");
+    document.body.style.overflow = "auto";
     menuIcon.src = "frontoffice/asset/img/menu.webp";
-    cursorDot.style.background = "#2a2a2a";
-    cursorOutline.style.border = "2px solid #282a39";
   });
 });
 
@@ -62,56 +49,107 @@ if (window.innerWidth > 1000) {
   });
 }
 
-// animations avec GSAP et ScrollTrigger
+gsap.to(".text", { duration: 0.4, y: "0%", stagger: 0.2 });
+
+const projet = {
+  projet1: {
+    titre: "Site web judo club d'ascoux",
+    description:
+      "Un site dynamique en HTML, CSS et JavaScript pour consulter les horaires et contacts du club de judo local.",
+    image: "frontoffice/asset/img/judo.webp",
+    lien: "https://ascoux-judoclub.fr/",
+    video: "frontoffice/asset/videos/ascoux_judoclub_video.webm",
+  },
+  projet2: {
+    titre: "Jeu Snake",
+    description:
+      "Un projet en HTML et JavaScript utilisant le Canvas pour recréer le classique jeu Snake, permettant de maîtriser les éléments JavaScript et l’API Canvas pour des animations interactives.",
+    image: "frontoffice/asset/img/snake.webp",
+    lien: "https://killianx45.github.io/snake/",
+    video: "frontoffice/asset/videos/snake_video.webm",
+  },
+  projet3: {
+    titre: "Blog en Symfony",
+    description:
+      "Un blog interactif développé avec Symfony, permettant la publication d’articles, l’ajout de notes, et intégrant un système de connexion sécurisé, le tout basé sur une base de données fournie par le client.",
+    image: "frontoffice/asset/img/blog_symfony.webp",
+    lien: "https://github.com/killianx45/projet_symfony",
+    video: "frontoffice/asset/videos/blog_symfony_video.webm",
+  },
+  projet4: {
+    titre: "Cinémathèque de France",
+    description:
+      "Un site web interactif développé avec React, Node.js et MongoDB, offrant une consultation complète des films disponibles, enrichie de fonctionnalités avancées pour les utilisateurs.",
+    image: "frontoffice/asset/img/cinetheque_react.webp",
+    lien: "https://github.com/killianx45/projetfilerouge_b2d_cinetheque",
+    video: "frontoffice/asset/videos/cinetheque_video.webm",
+  },
+  projet5: {
+    titre: "Application chronomètre en Flutter",
+    description:
+      "Une application mobile basique développée en Flutter pour s’initier au développement d’applications, proposant un chronomètre intuitif avec des fonctionnalités réduites au minimum.",
+    image: "frontoffice/asset/img/stopwatch.webp",
+    lien: "https://github.com/killianx45/stopwatch",
+    video: "frontoffice/asset/videos/stopwatch_video.webm",
+  },
+};
+
+const popup = document.querySelector(".popup");
+
+document.querySelectorAll(".slide-container img").forEach((image) => {
+  image.addEventListener("click", () => {
+    const imageSrc = image.getAttribute("src");
+    for (const key in projet) {
+      if (projet[key].image === imageSrc) {
+        const projetData = projet[key];
+        popup.innerHTML = `
+          <span class="popup-close">&times;</span>
+          <div class="content-popup">
+            <video class="img-popup" autoplay loop>
+              <source src="${projetData.video}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="text-popup">
+              <h4>${projetData.titre}</h4>
+              <p>${projetData.description}</p>
+              <a class="link-projet" href="${projetData.lien}" target="_blank" aria-label="${projetData.titre}" rel="noopener">Voir le projet</a>`;
+        popup.style.display = "flex";
+        popup.style.justifyContent = "center";
+        popup.style.alignItems = "center";
+        document.body.style.overflow = "hidden";
+
+        const closePopup = document.querySelector(".popup-close");
+        closePopup.addEventListener("click", () => {
+          popup.style.display = "none";
+          document.body.style.overflow = "auto";
+        });
+        document.addEventListener("click", (e) => {
+          if (e.target === popup) {
+            popup.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+      }
+    }
+  });
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".social-media a", {
-  scrollTrigger: {
-    trigger: ".social-media",
-    toggleActions: "restart none none reverse",
-    start: "top 50%",
-    end: "bottom 30%",
-  },
-  y: 100,
-  opacity: 0,
-  scale: 0,
-  ease: "elastic.out(0.4,0.15)",
-  duration: 1,
-  stagger: 0.2,
-});
+const sectionProjets = document.querySelector("#section-projets");
+const menuDesktop = document.querySelector(".menu-desktop");
+const mbgCol = document.querySelectorAll(".Mbg_col_el");
 
-gsap.from("#section-projets", {
-  scrollTrigger: {
-    trigger: "#section-projets",
-    toggleActions: "restart none none reverse",
-    start: "top 80%",
-  },
-  x: "-100vw",
-  duration: 0.5,
-});
-
-gsap.from(".slides-container", {
-  scrollTrigger: {
-    trigger: ".slides-container",
-    start: "top center",
-  },
-  y: "100vh",
-  duration: 0.5,
-  stagger: 0.5,
-});
-
+// Horizontal scroll for projects
+const projectSection = document.querySelector(".slides");
 if (window.innerWidth > 1000) {
-  const project = document.querySelector(".slides");
-
   function getScrollAmount() {
-    let projectWidth = project.scrollWidth;
+    let projectWidth = projectSection.scrollWidth;
     return -(projectWidth - window.innerWidth / 1.6);
   }
 
-  const tween = gsap.to(project, {
-    x: getScrollAmount,
-    y: 0,
+  const tween = gsap.to(projectSection, {
+    x: getScrollAmount(),
     duration: 3,
     ease: "none",
   });
@@ -124,61 +162,84 @@ if (window.innerWidth > 1000) {
     animation: tween,
     scrub: 3,
     invalidateOnRefresh: true,
+    onEnter: () => {
+      document.body.classList.add("dark-mode");
+      sectionProjets.classList.add("dark-mode");
+      menuDesktop.classList.add("dark-mode");
+      mbgCol.forEach((col) => col.classList.add("dark-mode"));
+    },
+    onEnterBack: () => {
+      document.body.classList.add("dark-mode");
+      sectionProjets.classList.add("dark-mode");
+      menuDesktop.classList.add("dark-mode");
+      mbgCol.forEach((col) => col.classList.add("dark-mode"));
+    },
+    onLeave: () => {
+      document.body.classList.remove("dark-mode");
+      sectionProjets.classList.remove("dark-mode");
+      menuDesktop.classList.remove("dark-mode");
+      mbgCol.forEach((col) => col.classList.remove("dark-mode"));
+    },
   });
 }
 
-gsap.to(".text", { duration: 0.4, y: "0%", stagger: 0.2 });
+const sectionCompetences = "competences";
 
-/** CURSOR */
-
-let cursorDot = document.querySelector(".cursor-dot");
-let cursorOutline = document.querySelector(".cursor-outline");
-
-if (window.innerWidth > 1000) {
-  window.addEventListener("mousemove", (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    cursorDot.style.top = `${posY}px`;
-    cursorDot.style.left = `${posX}px`;
-
-    //cursorOutline.style.top = `${posY}px`;
-    //cursorOutline.style.left = `${posX}px`;
-
-    cursorOutline.animate(
-      {
-        top: `${posY}px`,
-        left: `${posX}px`,
-      },
-      { duration: 500, fill: "forwards" }
-    );
-  });
-}
-
-let links = document.querySelectorAll(".link-social-media");
-
-links.forEach((link) => {
-  link.addEventListener("mouseover", () => {
-    cursorDot.style.background = "white";
-    cursorOutline.style.border = "2px solid white";
-  });
-
-  link.addEventListener("mouseleave", () => {
-    cursorDot.style.background = "#2a2a2a";
-    cursorOutline.style.border = "2px solid #282a39";
-  });
+ScrollTrigger.create({
+  trigger: `#${sectionCompetences}`,
+  start: "top 0%",
+  end: "top 30%",
+  onEnter: () => {
+    document.body.classList.remove("dark-mode");
+    sectionProjets.classList.remove("dark-mode");
+    menuDesktop.classList.remove("dark-mode");
+    mbgCol.forEach((col) => col.classList.remove("dark-mode"));
+  },
 });
 
-let competences = document.querySelectorAll(".competences");
+ScrollTrigger.create({
+  trigger: "#projets",
+  start: "top top",
+  end: "bottom top",
+  onLeaveBack: () => {
+    document.body.classList.remove("dark-mode");
+    sectionProjets.classList.remove("dark-mode");
+    menuDesktop.classList.remove("dark-mode");
+    mbgCol.forEach((col) => col.classList.remove("dark-mode"));
+  },
+});
 
-competences.forEach((slide) => {
-  slide.addEventListener("mouseover", () => {
-    cursorDot.style.background = "white";
-    cursorOutline.style.border = "2px solid white";
-  });
+gsap.to(".largeTitle-txt", {
+  scale: 1,
+  duration: 3,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: ".largeTitle-content",
+    start: "top center",
+    end: "bottom center",
+    scrub: true,
+    toggleActions: "play reverse play reverse",
+  },
+});
 
-  slide.addEventListener("mouseleave", () => {
-    cursorDot.style.background = "#2a2a2a";
-    cursorOutline.style.border = "2px solid #282a39";
-  });
+const MentionLegalPopup = document.querySelector(".mention-popup");
+const mentionLegalContent = document.querySelector(".mention-content");
+
+MentionLegalPopup.addEventListener("click", () => {
+  mentionLegalContent.classList.add("active");
+  document.body.classList.add("no-scroll");
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".mention-popup, .mention-content")) {
+    mentionLegalContent.classList.add("exiting");
+    document.body.classList.remove("no-scroll");
+    mentionLegalContent.addEventListener(
+      "animationend",
+      () => {
+        mentionLegalContent.classList.remove("active", "exiting");
+      },
+      { once: true }
+    );
+  }
 });
