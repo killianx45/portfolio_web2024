@@ -597,7 +597,7 @@ h2 .text {
   align-items: center;
   gap: 16px;
   width: 80%;
-  height: 400px;
+  height: 450px;
   margin-top: 16px;
   padding: 16px;
 }
@@ -685,7 +685,7 @@ h2 .text {
     flex-direction: column;
     gap: 16px;
     width: 20vw;
-    height: 50vh;
+    height: 450px;
   }
 }
 
