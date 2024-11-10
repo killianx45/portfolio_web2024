@@ -63,7 +63,7 @@ const projet = {
   projet2: {
     titre: "Jeu Snake",
     description:
-      "Un projet en HTML et JavaScript utilisant le Canvas pour recréer le classique jeu Snake, permettant de maîtriser les éléments JavaScript et l’API Canvas pour des animations interactives.",
+      "Un projet en HTML et JavaScript utilisant le Canvas pour recréer le classique jeu Snake, permettant de maîtriser les éléments JavaScript et l'API Canvas pour des animations interactives.",
     image: "frontoffice/asset/img/snake.webp",
     lien: "https://killianx45.github.io/snake/",
     video: "frontoffice/asset/videos/snake_video.webm",
@@ -71,7 +71,7 @@ const projet = {
   projet3: {
     titre: "Blog en Symfony",
     description:
-      "Un blog interactif développé avec Symfony, permettant la publication d’articles, l’ajout de notes, et intégrant un système de connexion sécurisé, le tout basé sur une base de données fournie par le client.",
+      "Un blog interactif développé avec Symfony, permettant la publication d'articles, l'ajout de notes, et intégrant un système de connexion sécurisé, le tout basé sur une base de données fournie par le client.",
     image: "frontoffice/asset/img/blog_symfony.webp",
     lien: "https://github.com/killianx45/projet_symfony",
     video: "frontoffice/asset/videos/blog_symfony_video.webm",
@@ -87,7 +87,7 @@ const projet = {
   projet5: {
     titre: "Application chronomètre en Flutter",
     description:
-      "Une application mobile basique développée en Flutter pour s’initier au développement d’applications, proposant un chronomètre intuitif avec des fonctionnalités réduites au minimum.",
+      "Une application mobile basique développée en Flutter pour s'initier au développement d'applications, proposant un chronomètre intuitif avec des fonctionnalités réduites au minimum.",
     image: "frontoffice/asset/img/stopwatch.webp",
     lien: "https://github.com/killianx45/stopwatch",
     video: "frontoffice/asset/videos/stopwatch_video.webm",
@@ -105,7 +105,7 @@ document.querySelectorAll(".slide-container img").forEach((image) => {
         popup.innerHTML = `
           <span class="popup-close">&times;</span>
           <div class="content-popup">
-            <video class="img-popup" controls>
+            <video class="img-popup" autoplay loop>
               <source src="${projetData.video}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -168,13 +168,19 @@ if (window.innerWidth > 1000) {
       menuDesktop.classList.add("dark-mode");
       mbgCol.forEach((col) => col.classList.add("dark-mode"));
     },
+    onLeave: () => {
+      document.body.classList.remove("dark-mode");
+      sectionProjets.classList.remove("dark-mode");
+      menuDesktop.classList.remove("dark-mode");
+      mbgCol.forEach((col) => col.classList.remove("dark-mode"));
+    },
     onEnterBack: () => {
       document.body.classList.add("dark-mode");
       sectionProjets.classList.add("dark-mode");
       menuDesktop.classList.add("dark-mode");
       mbgCol.forEach((col) => col.classList.add("dark-mode"));
     },
-    onLeave: () => {
+    onLeaveBack: () => {
       document.body.classList.remove("dark-mode");
       sectionProjets.classList.remove("dark-mode");
       menuDesktop.classList.remove("dark-mode");
@@ -183,30 +189,14 @@ if (window.innerWidth > 1000) {
   });
 }
 
-const sectionCompetences = "competences";
-
-ScrollTrigger.create({
-  trigger: `#${sectionCompetences}`,
-  start: "top 0%",
-  end: "top 30%",
-  onEnter: () => {
+// Ajout du gestionnaire d'événements pour les liens du menu
+document.querySelectorAll(".menu-desktop a, .menu-box a").forEach((link) => {
+  link.addEventListener("click", () => {
     document.body.classList.remove("dark-mode");
     sectionProjets.classList.remove("dark-mode");
     menuDesktop.classList.remove("dark-mode");
     mbgCol.forEach((col) => col.classList.remove("dark-mode"));
-  },
-});
-
-ScrollTrigger.create({
-  trigger: "#projets",
-  start: "top top",
-  end: "bottom top",
-  onLeaveBack: () => {
-    document.body.classList.remove("dark-mode");
-    sectionProjets.classList.remove("dark-mode");
-    menuDesktop.classList.remove("dark-mode");
-    mbgCol.forEach((col) => col.classList.remove("dark-mode"));
-  },
+  });
 });
 
 gsap.to(".largeTitle-txt", {
