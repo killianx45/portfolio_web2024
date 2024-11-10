@@ -105,7 +105,7 @@ document.querySelectorAll(".slide-container img").forEach((image) => {
         popup.innerHTML = `
           <span class="popup-close">&times;</span>
           <div class="content-popup">
-            <video class="img-popup" autoplay loop>
+            <video class="img-popup" controls>
               <source src="${projetData.video}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
