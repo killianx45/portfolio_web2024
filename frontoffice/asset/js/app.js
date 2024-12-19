@@ -57,7 +57,7 @@ const projet = {
     description:
       "Un site dynamique en HTML, CSS et JavaScript pour consulter les horaires et contacts du club de judo local.",
     image: "frontoffice/asset/img/judo.webp",
-    lien: "https://ascoux-judoclub.fr/",
+    lien: "https://github.com/killianx45/website_ascoux_judoclub",
     video: "frontoffice/asset/videos/ascoux_judoclub_video.webm",
   },
   projet2: {
